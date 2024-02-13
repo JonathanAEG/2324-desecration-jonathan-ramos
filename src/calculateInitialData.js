@@ -1,12 +1,12 @@
 
 const calculateInitiative = (hero)=>{
 
-    return hero.powerstats.intelligence + hero.powerstats.power;
+    return hero.intelligence + hero.power;
 }
 
 const calculateHP = (hero)=>{
 
-    let hp = hero.powerstats.strength * 10;
+    let hp = hero.strength * 10;
 
     if(hp > 666){
         hp = 666;
@@ -22,8 +22,8 @@ const calculateHP = (hero)=>{
     
     const newHero = hero;
 
-    newHero.powerstats.initiative = initiative;
-    newHero.powerstats.hitPoints = hitPoints;
+    newHero.initiative = initiative;
+    newHero.hitPoints = hitPoints;
 
     return newHero;
 }
