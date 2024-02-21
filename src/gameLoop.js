@@ -27,7 +27,6 @@ module.exports =  gameLoop = (heroArray)=>{
         adversary = setAdversary(currentHero, heroArray);
         gameOver = checkGameOver(heroArray);
     }
-
 }
 
 
@@ -55,7 +54,7 @@ const setAdversary = (currentHero, heroArray)=>{
 
     const currentHeroObject = heroArray[currentHero];
 
-    const filteredArray = heroArray.filter((hero)=> currentHeroObject.id !== hero);
+    const filteredArray = heroArray.filter((hero)=> currentHeroObject.name !== hero.name);
 
     return heroArray.indexOf(filteredArray[0]);
 }
@@ -80,7 +79,7 @@ const setAttack = (heroArray, currentHero, adversary)=>{
     const value = Dice.dice1D100();
     
 
-    if(value >= heroArray[currentHero].combat){
+    if(value <= heroArray[currentHero].combat){
 
         console.log(`${heroArray[currentHero].name} obtiene un ${value} y ataca con éxito`);
 
